@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ApiService, PokemonLink } from '../../services/api.service';
 
 @Component({
   selector: 'app-thumbnail',
@@ -9,16 +11,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class ThumbnailComponent implements OnInit {
 
-  public name: string = "test";
+  @Input()
+  public identifier: Array<PokemonLink>;
 
   
   constructor() {
-    console.log('Hey hey');
+    
   }
 
 
   ngOnInit() {
-    console.log("loaded");
+    
   }
 
 }

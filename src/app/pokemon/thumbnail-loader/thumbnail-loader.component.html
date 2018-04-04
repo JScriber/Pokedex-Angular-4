@@ -1,3 +1,10 @@
-<p>
-  thumbnail-loader works! :)
-</p>
+<header>
+  <h1>Find hereby the pokedex</h1>
+  <p>{{numberOfPokemon}} pokémons</p>
+</header>
+
+<ul>
+  <li *ngFor="let p of pokeList">
+    <app-thumbnail [identifier]="p"></app-thumbnail>
+  </li>
+</ul>

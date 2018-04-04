@@ -1,35 +1,40 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
-interface PokemonTemplate {
-  name: string
+export interface PokemonLink {
+  name: string,
+  url: string
+}
+export interface PokemonTemplate {
+
+  previous: string,
+  next: string,
+
+  results: Array<PokemonLink>
 }
 
 @Injectable()
 export class ApiService {
 
-  constructor(http: HttpClient){
 
-    this.getFromAPI(http);
+  private pokeList: Array<PokemonLink> = [];
+
+  constructor(private http: HttpClient){
+    this.getFromAPI();
   }
 
+  public getPokeList(): Array<PokemonLink>{
+    return this.pokeList;
+  }
 
-  public getFromAPI(http: HttpClient){
-    let link: string = "http://pokeapi.salestock.net/api/v2/pokemon";
+  public getFromAPI(): any{
+    let numberOfPokemon = 151;
+
+    let link: string = "http://pokeapi.salestock.net/api/v2/pokemon/?limit="+numberOfPokemon;
 
     // Get the json
-    http.get(link)
-    .subscribe((data: any) => {
-      console.log(data);
-    },
-    e => console.error(e));
-
-  }
-
-
-  ngOnInit() {
-    console.log('Service initialized')
+    return this.http.get<PokemonTemplate>(link);
   }
 }
 

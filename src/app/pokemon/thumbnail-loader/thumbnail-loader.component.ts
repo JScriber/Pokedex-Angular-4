@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ApiService } from '../../services/api.service';
-import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http';
+import { ApiService, PokemonLink, PokemonTemplate } from '../../services/api.service';
 
 @Component({
   selector: 'app-thumbnail-loader',
@@ -11,13 +10,30 @@ import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http'
 
 export class ThumbnailLoaderComponent implements OnInit {
 
-  constructor(api: ApiService){
+  public pokeList: Array<PokemonLink>;
+  public numberOfPokemon: number;
 
-      console.log("Thumbnail loader loaded");
+  constructor(private api: ApiService){
+    this.init();
   }
 
-  ngOnInit() {
+  private init(){
+    // Loads the pokemons
+    this.api.getFromAPI().subscribe((data: PokemonTemplate) => {
+      // Displays all the pokemons on the console
+      //this.showPokemon(data.results);
 
+      this.pokeList = data.results;
+      this.numberOfPokemon = data.results.length;
+    },
+    (e) => {
+      console.error(e);
+    });
+  }
+
+
+  ngOnInit() {
+    
   }
 
 }
