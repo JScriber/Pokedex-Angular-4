@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-import { PokemonModule } from './pokemon/pokemon.module';
+import { ThumbnailLoaderComponent } from './pokemon/thumbnail-loader/thumbnail-loader.component';
 
 
 import { ApiService } from './services/api.service';
@@ -11,11 +12,12 @@ import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ThumbnailLoaderComponent
   ],
   imports: [
     BrowserModule,
-    PokemonModule
+    HttpClientModule
   ],
   providers: [
     ApiService
