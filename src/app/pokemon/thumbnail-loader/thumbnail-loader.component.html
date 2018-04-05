@@ -4,7 +4,7 @@
 </header>
 
 <ul>
-  <li *ngFor="let p of pokeList">
-    <app-thumbnail routerLink="/pokemon/{{p.name}}" [identifier]="p"></app-thumbnail>
+  <li *ngFor="let p of pokeList; let i = index">
+    <app-thumbnail routerLink="/pokemon/{{i}}" [identifier]="p"></app-thumbnail>
   </li>
 </ul>

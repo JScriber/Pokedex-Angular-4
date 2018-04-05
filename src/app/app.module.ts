@@ -21,7 +21,7 @@ const routes: Routes = [
     component: ThumbnailLoaderComponent
   },
   {
-    path: "pokemon/:name",
+    path: "pokemon/:id",
     component: DetailsComponent
   },
   {
