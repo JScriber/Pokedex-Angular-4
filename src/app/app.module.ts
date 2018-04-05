@@ -49,7 +49,7 @@ const routes: Routes = [
     // Routes
     RouterModule.forRoot(
       routes,
-      { enableTracing: true }
+      { enableTracing: false }
     )
   ],
   providers: [

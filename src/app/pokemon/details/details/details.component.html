@@ -1,3 +1,23 @@
-<p>
-  More details about this pokemon
-</p>
+<h1>{{name}}</h1>
+
+<img src="{{frontSprite}}"/>
+
+<h2>Basic informations</h2>
+<ul>
+  <li>Weight : {{weight}} kg</li>
+  <li>Height : {{height}} m</li>
+</ul>
+
+<h2>Type</h2>
+<ul>
+  <li *ngFor="let type of types">
+    {{type}}
+  </li>
+</ul>
+
+<h2>Moves</h2>
+<ul>
+    <li *ngFor="let move of moves">
+      {{move}}
+    </li>
+  </ul>

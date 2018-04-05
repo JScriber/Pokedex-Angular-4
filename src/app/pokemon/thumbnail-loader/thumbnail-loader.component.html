@@ -5,6 +5,6 @@
 
 <ul>
   <li *ngFor="let p of pokeList; let i = index">
-    <app-thumbnail routerLink="/pokemon/{{i}}" [identifier]="p"></app-thumbnail>
+    <app-thumbnail routerLink="/pokemon/{{i+1}}" [identifier]="p"></app-thumbnail>
   </li>
 </ul>
