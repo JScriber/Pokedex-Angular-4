@@ -40,6 +40,8 @@ ul
     justify-content: center;
     flex-flow: row wrap;
     list-style-type: none;
+    padding: 0;
+    margin: 30px 0;
 }
 li
 {
