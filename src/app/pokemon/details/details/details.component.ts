@@ -13,6 +13,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 
 export class DetailsComponent implements OnInit {
 
+  public pokedexNumber: string;
   public name: string;
   public weight: number;
   public height: number;
@@ -29,8 +30,23 @@ export class DetailsComponent implements OnInit {
     this.colorClass = this.types[0];
   }
 
+  // Creates a text from integer
+  private setPokedexNumber(integer: number): void {
+    let pokedexNumber = "";
+    if(integer < 10){
+      pokedexNumber += "0";
+    }
+    if(integer < 100){
+      pokedexNumber += "0";
+    }
+    this.pokedexNumber = pokedexNumber+integer;
+  }
+
   constructor(private route: ActivatedRoute, private api: ApiService) {
       let wantedPokemon: number = this.route.snapshot.params['id'];
+
+      // Get the pokedex number
+      this.setPokedexNumber(wantedPokemon);
 
       // Retrieves the informations on the Pokemon
       let url: string = "http://pokeapi.salestock.net/api/v2/pokemon/"+wantedPokemon;

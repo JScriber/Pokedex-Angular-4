@@ -1,10 +1,10 @@
 <header>
-  <h1>Find hereby the pokedex</h1>
-  <p>{{numberOfPokemon}} pokémons</p>
+  <p>Pokédex of {{numberOfPokemon}} pokémons</p>
 </header>
 
 <ul>
-  <li *ngFor="let p of pokeList; let i = index">
-    <app-thumbnail routerLink="/pokemon/{{i+1}}" [identifier]="p"></app-thumbnail>
+  <!-- let i = index; --> 
+  <li *ngFor="let p of pokeList; index as i">
+    <app-thumbnail routerLink="/pokemon/{{i+1}}" [id]="i+1" [identifier]="p"></app-thumbnail>
   </li>
 </ul>

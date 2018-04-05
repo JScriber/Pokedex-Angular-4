@@ -8,11 +8,30 @@
     <button></button>
 </header>
 
-<img src="{{frontSprite}}"/>
-<ul>
-  <li>Weight : {{weight}} kg</li>
-  <li>Height : {{height}} m</li>
-</ul>
+<ol class="detailCard">
+	<ul class="detailSprite">
+		<li>
+			<img src="{{frontSprite}}"/>
+		</li>
+		<li>
+			<p>{{pokedexNumber}}</p>
+		</li>
+	</ul>
+	<ul class="detailMeasurements">
+		<li>
+			<strong>Bla</strong>
+			Species
+		</li>
+		<li>
+			<strong>{{height}} m</strong>
+			Height
+		</li>
+		<li>
+			<strong>{{weight}} kg</strong>
+			Weight
+		</li>
+	</ul>
+</ol>
 
 <h2>Type</h2>
 <ul>

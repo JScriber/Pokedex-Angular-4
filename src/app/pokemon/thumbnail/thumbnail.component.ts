@@ -13,6 +13,8 @@ export class ThumbnailComponent implements OnInit {
 
   @Input()
   public identifier: PokemonLink;
+  @Input()
+  public id: number;
 
   
   constructor() { }

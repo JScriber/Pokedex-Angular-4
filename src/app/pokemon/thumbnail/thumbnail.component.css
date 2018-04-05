@@ -1,18 +1,59 @@
-p
+*
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+ul
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #666666;
+    transition: all .1s linear 0s;
+}
+
+
+ul:hover
+{
+    background: #E92D36;
+}
+ul:hover li
+{
+    color: #fff;
+}
+ul:hover li:last-child
+{
+    font-weight: bold;
+}
+
+li
 {
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    color: #000;
+    height: auto;
     margin: 0;
     padding: 0;
     text-transform: capitalize;
 }
-p:hover
+li:first-child
 {
-    background: black;
-    color: white;
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+}
+li:last-child
+{
+    font-size: 13px;
+    margin-top: 3px;
+    color: #363636;
+    text-transform: uppercase;
+    font-weight: 300;
 }

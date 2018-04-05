@@ -3,14 +3,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-button
-{
-    padding: 5px;
-}
-button img
-{
-    height: 15px;
-}
 
 header
 {
@@ -53,10 +45,14 @@ header button
     padding: 0 15px;
     background: transparent;
 }
-
 header button img{
     height: 20px;
 }
+button:active img
+{
+    transform: scale(.9);
+}
+
 
 header ul
 {
@@ -73,14 +69,103 @@ header ul li
 
 h2
 {
-    display: inline;
+    position: relative;
+    display: inline-block;
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
     width: auto;
-    margin-left: 20px;
+    margin-left: 30px;
     padding: 7px 10px;
     background: #E92D36;
     letter-spacing: 2px;
+}
+h2::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 30px;
+    height: 2px;
+    background: inherit;
+}
+
+
+/* Card which contains the image and some numbers */
+.detailCard
+{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 450px;
+    margin: 40px auto;
+    padding: 0;
+    list-style-type: none;
+}
+.detailCard ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.detailSprite
+{
+    display: flex;
+    width: 150px;
+    flex-flow: column wrap;
+}
+.detailSprite li
+{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailSprite li:last-child
+{
+    height: 30px;
+}
+.detailSprite li img
+{
+    height: 110px;
+}
+
+
+.detailMeasurements
+{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+
+    background: pink;
+    flex-flow: row wrap;
+}
+.detailMeasurements li
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    width: auto;
+    height: 100%;
+    font-size: 12px;
+    color: #666666;
+    border-right: 1px solid #D9D9D9;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.detailMeasurements li:last-child
+{
+    border-right: none;
+}
+.detailMeasurements li strong
+{
+    font-weight: 700;
+    font-size: 18px;
 }
