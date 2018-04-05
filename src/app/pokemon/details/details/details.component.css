@@ -102,6 +102,8 @@ h2::before
     margin: 40px auto;
     padding: 0;
     list-style-type: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D9D9D9;
 }
 .detailCard ul
 {
@@ -122,26 +124,35 @@ h2::before
     height: auto;
     justify-content: center;
     align-items: center;
+    color: #3f3f3f;
 }
 
 .detailSprite li:last-child
 {
     height: 30px;
+    font-weight: light;
+    font-size: 16px;
 }
 .detailSprite li img
 {
     height: 110px;
 }
 
+/* Contains measurements and types */
+.detailInformations
+{
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column wrap;
+}
 
 .detailMeasurements
 {
     position: relative;
     display: flex;
-    flex-grow: 1;
-
-    background: pink;
     flex-flow: row wrap;
+    height: 100px;
+    width: 100%;
 }
 .detailMeasurements li
 {
@@ -168,4 +179,36 @@ h2::before
 {
     font-weight: 700;
     font-size: 18px;
+}
+
+.detailTypes
+{
+    position: relative;
+    top: 2px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    list-style-type: none;
+}
+.detailTypes li
+{
+    padding: 8px 15px;
+    color: #fff;
+    background: gray;
+    border-radius: 50px;
+    margin-left: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+/* Color association */
+.detailTypes li.poison
+{
+    background: rgb(138, 24, 138);
+}
+.detailTypes li.grass
+{
+    background: rgb(19, 180, 19);
 }

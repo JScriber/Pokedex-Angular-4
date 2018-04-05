@@ -17,28 +17,30 @@
 			<p>{{pokedexNumber}}</p>
 		</li>
 	</ul>
-	<ul class="detailMeasurements">
-		<li>
-			<strong>Bla</strong>
-			Species
-		</li>
-		<li>
-			<strong>{{height}} m</strong>
-			Height
-		</li>
-		<li>
-			<strong>{{weight}} kg</strong>
-			Weight
-		</li>
+	<ul class="detailInformations">
+		<ul class="detailMeasurements">
+			<li>
+				<strong>{{species}}</strong>
+				Species
+			</li>
+			<li>
+				<strong>{{height}} m</strong>
+				Height
+			</li>
+			<li>
+				<strong>{{weight}} kg</strong>
+				Weight
+			</li>
+		</ul>
+		<ul class="detailTypes">
+			<li *ngFor="let type of types" class="{{type}}">
+				{{type}}
+			</li>
+		</ul>
 	</ul>
+	
 </ol>
 
-<h2>Type</h2>
-<ul>
-  <li *ngFor="let type of types">
-    {{type}}
-  </li>
-</ul>
 
 <h2>Abilities</h2>
 <ul>

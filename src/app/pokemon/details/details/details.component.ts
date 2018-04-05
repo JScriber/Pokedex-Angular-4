@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
   public types: Array<string> = [];
   public abilities: Array<string> = [];
   public moves: Array<string> = [];
+  public species: string;
 
   public colorClass: string = "";
 
@@ -53,9 +54,12 @@ export class DetailsComponent implements OnInit {
 
       this.api.getFromAPI(url).subscribe((data: any) => {
 
+        console.log(data);
+
         this.name = data.name;
         this.weight = (data.weight/10);
         this.height = (data.height/10);
+        this.species = data.species.name;
 
         this.frontSprite = data.sprites.front_default;
 
