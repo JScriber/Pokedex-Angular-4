@@ -20,7 +20,7 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "ng": "ng",
-      "start": "ng serve --proxy-config proxy.conf.json",
+      "start": "ng serve --live-reload false",
       "build": "ng build",
       "test": "ng test",
       "lint": "ng lint",

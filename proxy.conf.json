@@ -1,7 +1,0 @@
-{
-  "/api": {
-    "target": "http://pokeapi.salestock.net/api/v2",
-    "secure": false,
-    "logLevel": "debug"
-  }
-}

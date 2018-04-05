@@ -1,53 +1,62 @@
+*
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+button
+{
+    padding: 5px;
+}
+button img
+{
+    height: 15px;
+}
+
 header
 {
     position: relative;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    height: 120px;
+    justify-content: space-between;
+    height: 60px;
     width: 100%;
     margin: 0;
-    background: #eeeeee;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, .4);
+    color: #fff;
+    background: #E92D36;
 }
-header > img
+header::before
 {
-    margin: 0 30px;
-    height: 100px;
-}
-header > div
-{
-    display: flex;
-    flex-flow: column wrap;
-    flex-grow: 1;
-    height: 100%;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 49.65%;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 3px solid rgb(223, 55, 63);
 }
 header h1
 {
-    display: flex;
-    width: 100%;
-    height: 30px;
-    border-bottom: 1px solid #adadad;
-    padding: 10px 0;
+    width: auto;
     text-transform: uppercase;
-    color: #000;
-    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 19px;
+}
+header button
+{
+    outline: none;
+    border: none;
+    padding: 0 15px;
+    background: transparent;
 }
 
-header.electric h1
-{
-    color: rgb(109, 109, 10);
+header button img{
+    height: 20px;
 }
-header.fire h1
-{
-    color: rgb(109, 33, 10);
-}
-header.poison h1
-{
-    color: rgb(91, 16, 114);
-}
-
 
 header ul
 {
@@ -59,5 +68,19 @@ header ul
 }
 header ul li
 {
+    margin-left: 5px;
+}
+
+h2
+{
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    width: auto;
     margin-left: 20px;
+    padding: 7px 10px;
+    background: #E92D36;
+    letter-spacing: 2px;
 }
