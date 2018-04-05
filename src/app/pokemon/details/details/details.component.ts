@@ -17,11 +17,17 @@ export class DetailsComponent implements OnInit {
   public weight: number;
   public height: number;
   public types: Array<string> = [];
+  public abilities: Array<string> = [];
   public moves: Array<string> = [];
+
+  public colorClass: string = "";
 
   public frontSprite: string;
 
 
+  private setClassFromTypes(): void {
+    this.colorClass = this.types[0];
+  }
 
   constructor(private route: ActivatedRoute, private api: ApiService) {
       let wantedPokemon: number = this.route.snapshot.params['id'];
@@ -46,6 +52,13 @@ export class DetailsComponent implements OnInit {
         for(let i = 0; i < data.moves.length; i++){
           this.moves.push(data.moves[i].move.name);
         }
+
+        // Adds the abilities
+        for(let i = 0; i < data.abilities.length; i++){
+          this.abilities.push(data.abilities[i].ability.name);
+        }
+
+        this.setClassFromTypes();
       },
       (e) => {
         console.error(e);
