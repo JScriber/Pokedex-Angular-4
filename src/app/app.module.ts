@@ -6,10 +6,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+// My components
 import { ThumbnailLoaderComponent } from './pokemon/thumbnail-loader/thumbnail-loader.component';
 import { ThumbnailComponent } from './pokemon/thumbnail/thumbnail.component';
 import { ErrorComponent } from './error/error/error.component';
-
+import { DetailsComponent } from './pokemon/details/details/details.component';
 
 import { ApiService } from './services/api.service';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: "pokemon",
     component: ThumbnailLoaderComponent
+  },
+  {
+    path: "pokemon/:name",
+    component: DetailsComponent
   },
   {
     path: '',
@@ -35,7 +40,8 @@ const routes: Routes = [
     AppComponent,
     ThumbnailComponent,
     ThumbnailLoaderComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
