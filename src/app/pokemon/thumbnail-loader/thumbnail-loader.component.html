@@ -5,6 +5,8 @@
 
 <ul>
   <li *ngFor="let p of pokeList">
-    <app-thumbnail [identifier]="p"></app-thumbnail>
+    <app-thumbnail routerLink="/pokemon/{{p.name}}" [identifier]="p"></app-thumbnail>
   </li>
 </ul>
+
+<router-outlet></router-outlet>

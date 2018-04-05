@@ -18,11 +18,11 @@ export class ThumbnailLoaderComponent implements OnInit {
   }
 
   private init(){
-    // Loads the pokemons
-    this.api.getFromAPI().subscribe((data: PokemonTemplate) => {
-      // Displays all the pokemons on the console
-      //this.showPokemon(data.results);
+    let numberOfPokemon = 151;
+    let link: string = "http://pokeapi.salestock.net/api/v2/pokemon/?limit="+numberOfPokemon;
 
+    // Loads the pokemons
+    this.api.getFromAPI(link).subscribe((data: PokemonTemplate) => {
       this.pokeList = data.results;
       this.numberOfPokemon = data.results.length;
     },

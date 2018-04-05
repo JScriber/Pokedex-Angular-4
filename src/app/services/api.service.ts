@@ -21,19 +21,14 @@ export class ApiService {
   private pokeList: Array<PokemonLink> = [];
 
   constructor(private http: HttpClient){
-    this.getFromAPI();
+
   }
 
   public getPokeList(): Array<PokemonLink>{
     return this.pokeList;
   }
 
-  public getFromAPI(): any{
-    let numberOfPokemon = 151;
-
-    let link: string = "http://pokeapi.salestock.net/api/v2/pokemon/?limit="+numberOfPokemon;
-
-    // Get the json
+  public getFromAPI(link: string): any{
     return this.http.get<PokemonTemplate>(link);
   }
 }

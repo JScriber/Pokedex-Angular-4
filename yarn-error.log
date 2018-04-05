@@ -75,7 +75,7 @@ Trace:
   Exit signal: SIGHUP
   Command: sh
   Arguments: -c ng serve --proxy-config proxy.conf.json
-  Directory: /home/jscriber/Documents/pokdex
+  Directory: /home/jscriber/Documents/Pokedex-Angular-4
   Output:
   
       at ProcessTermError.Error (native)
